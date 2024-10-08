@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Form</title>
+    <link rel="icon" type="image/png" href="assets/images/euC.png">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+
+    <nav>
+
+        <a href = "#">
+            <img src = "assets/images/euC.png" alt = "logo" class = "logo-image">
+        </a>
+
+        <a href = "#" class = "logo-text">
+            <span> Manuel S. Enverga Candelaria Quezon </span>
+        </a>
+
+    </nav>
+
+    <section id = "body">
+
+        <div class = "container">
+            <h1> This is <span class = "typed"> </span> </h1>
+
+            <p class = "sub-heading">
+                This digital space is exclusively for Grade 7 students to store and secure their completed output for the current academic year.
+            </p>
+
+            <div id="loginbtn">
+              
+                <a href="#" class="btn" onclick = showLogInDialog(true)>Log In</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <dialog id = "LogIn-dialog">
+
+        <div class = "wrapper">
+
+          <form id = "loginForm">
+
+            <span class="input-span">
+              <label for="id" class="label"> ID Number (A** - ****) </label>
+              <input type="text" name="id" id="id" required/> </span>
+
+            <span class="input-span">
+              <label for="password" class="label">Password</label>
+              <input type="password" name="password" id="password" required/> </span>
+
+              <span class="sub-text">Your initial password is your birthdate in this format YYYY-MM-DD.</span>  
+        
+
+            <span class="span"><a href="#">Forgot password?</a></span>
+
+            <input class="submit" type="submit" value="Log in" />
+
+          </form>     
+
+        </div>    
+
+    </dialog>
+
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src = "script.js"></script>
+    <script src = "fetch_login.js"></script>
+
+</body>
+</html>

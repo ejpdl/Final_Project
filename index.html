@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/logo/euC.png">
+    <link rel = "stylesheet" href = "styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <nav>
+        <a href = "#">
+            <img src = "assets/logo/euC.png" alt = "logo" class = "logo-image">
+        </a>
+
+        <ul class = "menus">
+            <a href = "#home"> <button class = "nav-menus"> Home </button> </a>
+            <a href = "#about"> <button class = "nav-menus"> About </button> </a>
+            <a href = "#artifacts"> <button class = "nav-menus"> Artifacts </button> </a>
+            <a href = "#peers"> <button class = "nav-menus"> Peers </button> </a>
+        </ul>
+
+        <a href = "Log In Board/index.html">
+            <button class = "log-out"> Log Out </button>
+        </a>
+
+        <i class='bx bx-menu-alt-right' id = "menu-icon"></i>
+
+    </nav>
+
+    <section id = "home">
+
+        <img id = "profile" src="assets/profiles/2x2(EJ).jpg" alt="Profile Image">    
+
+        <div class = "info-box">
+            <h1> Hello, I'm </h1>
+            <span class = "auto-typed"> </span>
+            <h3> <span id = "gradesection"> </span> </h3>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. A vel sapiente porro nihil dolorem? Nobis beatae tempore nesciunt possimus cumque. </p>
+        </div>
+
+        <div class = "btn-box">
+
+            <div class = "btn" onclick = "updateMember('A21-0398')">
+                <a href = "#edit" class = "edit-btn"> Edit </a>
+            </div>
+            <div class = "btn" onclick = showUploadDialog(true)>
+                <a href = "#upload" > Upload </a>
+            </div>
+
+        </div>
+
+        <dialog id = "Edit-dialog">
+
+            <div class = "edit_wrapper">
+
+                <div class="form-container-edit">
+
+                    <h2>Update Information</h2>
+
+                    <form action = "http://localhost:5000/single" method = "POST" enctype = "multipart/form-data">
+
+                        <div class="form-group-edit">
+                            <label for="fname">First Name:</label>
+                            <input type="text" id="fname" name="fname" placeholder = "Enter your first name here" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="mname">Middle Name:</label>
+                            <input type="text" id="mname" name="mname" placeholder = "Enter your middle name here" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" name="lname" placeholder = "Enter your last name here" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="gradeSection">Grade and Section:</label>
+                            <input type="text" id="gradeSection" name="gradeSection" placeholder = "(e.g. 7-Lirio)" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="bio">Description (Bio):</label>
+                            <textarea id="bio" name="bio" placeholder="Tell us something about yourself..."></textarea>
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="bday">Birthday:</label>
+                            <input type="date" id="bday" name="bday" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="(e.g. phone number or tel number)" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder = "Enter your email here" required />
+                        </div>
+
+                        <div class="form-group-edit">
+                            <label for="profilePicture">Profile Picture:</label>
+                                <input type="file" id="profilePicture" name="image" accept="image" required>
+                        </div>
+                        
+
+                        <div class="form-group-edit">
+                            <button type="submit" id="updateButton"> Update Information </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+        </dialog>
+
+        <dialog id = "Upload-dialog">
+
+            <div class = "upload_wrapper">
+    
+                <div class="form-container">
+
+                    <h2>Upload Document</h2>
+
+                    <form action="#" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group">
+
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder = "(e.g. Seatwork#1-English)" required />
+
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">--Select Subject--</option>
+                                <option value="english">English</option>
+                                <option value="filipino">Filipino</option>
+                                <option value="math">Math</option>
+                                <option value="science">Science</option>
+                                <option value="history">P.E.</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Type of Material:</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">--Select Material--</option>
+                                <option value="quizzes">Quiz</option>
+                                <option value="pt">Performance Task</option>
+                                <option value="assignment">Assignment</option>
+                                <option value="seatwork">Seatwork</option>
+                                <option value="exam-papers">Examination Papers</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file">Upload File:</label>
+                            <input type="file" id="file" name="file" required/>
+                        </div>
+                        
+
+                        <div class="upload-buttons">
+                            <button type="submit">Submit</button>
+                        </div>
+                    
+                    </form>
+
+                    <div class="upload-buttons">
+                        <button type="button" onclick = showUploadDialog(false)>Cancel</button>
+                    </div>
+
+                </div>
+            
+            </div>    
+    
+        </dialog>
+
+    </section>
+
+    <section id = "about">
+        <div class = "about-box">
+
+            <div class = "about-info">
+
+                <h1> <span> About Me </span> </h1>
+                <p id = "aboutme"> </p>
+
+            </div>
+
+            <h2> <span> Demographics </span> </h2>
+
+            <div class = "demographics">
+
+                <ul>
+                    <li>
+                        <span> Age </span>
+                    </li>
+                    <li>
+                        <span> Birthday </span>
+                    </li>
+                    <li>
+                        <span> Phone Number </span>
+                    </li>
+                    <li>
+                        <span> Email </span>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <img src = "assets/profiles/2x2(EJ).jpg" alt = "About Me Profile">
+    </section>
+
+    <section id = "artifacts">
+
+        <h1 class = "header"> <span> Artifacts </span> </h1>
+
+        <div class = "artifacts-container">
+
+            <a href = "Student_Artifacts/subjects.html">
+
+                <div class = "box">
+
+                    <h1> <span> Quizzes </span> </h1>
+
+                    <p> A quiz refers to a short test of knowledge, typically around 10 questions in length, with question formats often including multiple choice, fill in the blanks, true or false and short answer. </p>
+
+                </div>
+
+            </a>
+
+            <a href = "Student_Artifacts/subjects.html">
+
+                <div class = "box">
+
+                    <h1> <span> Performance Tasks </span> </h1>
+
+                    <p> Include skills demonstration, group presentations, oral work, multimedia presentations, and research projects. </p>
+
+                </div>
+
+            </a>
+
+            <a href = "Student_Artifacts/subjects.html">
+
+                <div class = "box">
+
+                    <br></br>
+                    <h1> <span> Assignments </span> </h1>
+
+                    <p> It is used to keep track of the progress of the students in achieving the learning standards and in the development of 21st century skills, to promote self-reflection and personal accountability among students, and provide basis for the profiling of student performance. </p>
+
+                </div>
+
+            </a>
+
+            <a href = "Student_Artifacts/subjects.html">
+
+                <div class = "box">
+
+                    <h1> <span> Seatworks </span> </h1>
+
+                    <p> Typically short and can include exercises, worksheets, or small projects aimed at reinforcing the lesson taught or assessing students' understanding of the material. </p>
+
+                </div>
+
+            </a>
+
+            <a href = "Student_Artifacts/subjects.html">
+
+                <div class = "box">
+
+                    <h1> <span> Examination Papers </span> </h1>
+
+                    <p> Formal assessments used to evaluate students' understanding and mastery of the curriculum. </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <section id = "peers">
+        
+        <h1 class = "header"> <span> Peers </span> </h1>
+
+        <div class="card">
+            <div class="card-border-top"></div>
+                <div class="img">
+                    <img src = "assets/profiles/2x2(EJ).jpg">
+                </div>
+                    <span> Katricia Pida </span>
+                    <p class="grade-section"> 7 - Lirio </p>
+
+                    <a href = "Classmate_Side/index.html">
+                        <button> Visit </button>
+                    </a>
+        </div>
+
+        <div class="card">
+            <div class="card-border-top"></div>
+                <div class="img">
+                    <img src = "assets/profiles/2x2(EJ).jpg">
+                </div>
+                    <span> Katricia Pida </span>
+                    <p class="grade-section"> 7 - Lirio </p>
+
+                    <a href = "Classmate_Side/index.html">
+                        <button> Visit </button>
+                    </a>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class = "col-left">
+
+            <div class = "col-box">
+                <span> <i class='bx bxs-location-plus' ></i> </span>
+                <span>Manuel S. Enverga Candelaria, 4323</span>
+            </div>
+
+            <div class = "col-box">
+                <span> <i class='bx bxs-phone-call' ></i> </span>
+                <span> 09381689796 </span>
+            </div>
+
+            <div class = "col-box">
+                <span> <i class='bx bxs-envelope' ></i> </span>
+                <span>delaraephraim171@gmail.com</span>
+            </div>
+
+        </div>
+
+        <div class = "col-right">
+            <span> About My Services </span>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sit ad consequuntur sed minus amet corporis recusandae quidem deserunt quam! </p>
+
+            <div class = "social-icons">
+
+                <span> <i class='bx bxl-facebook-circle'></i> </span>
+
+                <span> <i class='bx bxl-instagram-alt' ></i> </span>
+
+                <span> <i class='bx bxl-github'></i> </span>
+
+                <span> <i class='bx bxl-linkedin-square'></i> </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src = "script.js"></script>
+    <script src = "fetch.js"></script>
+
+</body>
+</html>
+

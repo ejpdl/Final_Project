@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center; /* Centers grid in the middle */
+        }
+
+        .image-grid-item {
+            flex: 1 1 calc(33.33% - 10px); /* 3 images per row */
+            margin-bottom: 10px;
+            overflow: hidden; /* Hides overflow of images */
+            position: relative; /* Required for the img to fill the container */
+        }
+
+        .image-grid-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures images cover the area */
+            display: block;
+            transition: transform 0.3s; /* Optional: adds a hover effect */
+        }
+
+        /* Media query for tablets (2 images per row) */
+        @media screen and (max-width: 768px) {
+            .image-grid-item {
+                flex: 1 1 calc(50% - 10px); /* 2 images per row */
+            }
+        }
+
+        /* Media query for mobile (1 image per row) */
+        @media screen and (max-width: 480px) {
+            .image-grid-item {
+                flex: 1 1 100%; /* 1 image per row */
+            }
+        }
+
+        /* Optional hover effect */
+        .image-grid-item:hover img {
+            transform: scale(1.05); /* Slightly scales up the image on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Image Grid</h1>
+
+    <div class="image-grid">
+        <div class="image-grid-item">
+            <img src="../assets/images/pexels-andy-barbour-6683394.jpg" alt="Image 1">
+        </div>
+        <div class="image-grid-item">
+            <img src="../assets/images/pexels-annpoan-5797900.jpg" alt="Image 2">
+        </div>
+        <div class="image-grid-item">
+            <img src="../assets/profiles/pexels-justin-shaifer-501272-1222271.jpg" alt="Image 3">
+        </div>
+        <div class="image-grid-item">
+            <img src="../assets/profiles/pexels-simon-robben-55958-614810.jpg" alt="Image 4">
+        </div>
+        <div class="image-grid-item">
+            <img src="../assets/images/pexels-kate-graur-3626318-5425686.jpg" alt="Image 5">
+        </div>
+        <div class="image-grid-item">
+            <img src="../assets/images/pexels-pixabay-159751.jpg" alt="Image 6">
+        </div>
+    </div>
+
+</body>
+</html>

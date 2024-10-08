@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-md-2 bg-dark text-white d-flex flex-column justify-content-between p-4 vh-100">
+                <div>
+                    <h2 class="mb-4">AchieveHub</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="index.html" class="nav-link text-white">Summary</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link text-white" id="sectionsLink">Sections</a>
+                            <!-- Submenu for sections -->
+                            <ul class="nav flex-column ms-3 d-none" id="sectionsMenu">
+                                <li class="nav-item mb-2">
+                                    <a href="lirio.html" class="nav-link text-white">7 - Lirio</a>
+                                </li>
+                                <li class="nav-item mb-2">
+                                    <a href="zirconium.html" class="nav-link text-white">7 - Zirconium</a>
+                                </li>
+                                <li class="nav-item mb-2">
+                                    <a href="aldea.html" class="nav-link text-white">7 - Jade</a>
+                                </li>
+                                <li class="nav-item mb-2">
+                                    <a href="everyday.html" class="nav-link text-white">7 - Aldea</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white">Grades</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="mb-1">Help</p>
+                    <p>Contact us</p>
+                    <a href="../Log In Board/index.html">
+                        <button class="btn btn-outline-light w-100">Log out</button>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main content -->
+            <main class="col-md-10 bg-light p-4">
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1>Welcome back, Ma'am Katricia</h1>
+                        <p>Your Digital Portfolio!</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <input type="search" class="form-control me-3" placeholder="Search">
+                        <div class="d-flex align-items-center">
+                            <img src="profile.jpg" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
+                            <span class="ms-2">Ma'am Katricia</span>
+                        </div>
+                    </div>
+                </header>
+
+                <section>
+                    <h2 class="mb-4">Your Classes</h2>
+                    <!-- Example content for main section -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">7 - Lirio</h5>
+                                    <p class="card-text">31 Students</p>
+                                    <a href="lirio.html" class="btn btn-primary">View Class</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">7 - Zirconium</h5>
+                                    <p class="card-text">26 Students</p>
+                                    <a href="lirio.html" class="btn btn-primary">View Class</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">7 - Jade</h5>
+                                    <p class="card-text">27 Students</p>
+                                    <a href="lirio.html" class="btn btn-primary">View Class</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">7 - Sapphire</h5>
+                                    <p class="card-text">30 Students</p>
+                                    <a href="lirio.html" class="btn btn-primary">View Class</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script to handle submenu toggle -->
+    <script src = "script.js"></script>
+</body>
+</html>
